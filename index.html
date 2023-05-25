@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Dog</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="./src/img/head.jpg">
+</head>
+
+<body class="bg-gradient-to-b from-purple-400 to-blue-400">
+    <header class="py-8">
+        <div class="container mx-auto text-white text-center">
+            <div class="border border-white rounded-lg shadow-lg p-6">
+                <h1 class="text-6xl font-bold font-serif my-5">HAPPY DOG</h1>
+                <p class="mt-2 text-lg">Un espacio de amor y diversión</p>
+            </div>
+
+            <img src="./src/img/dueños.jpg" alt="Dueños de la empresa" class="mt-12 rounded-full mx-auto py-2"
+                style="width: 240px; height: 240px;">
+            <a class="inline-block bg-blue-700 text-white font-bold px-10 py-2 mt-6 rounded-full shadow-lg hover:bg-white hover:text-blue-600 transition-colors duration-300"
+                href="#contact">Contáctanos</a>
+        </div>
+    </header>
+    <hr class="border-t border-gray-300 my-12">
+    <div class="main-content">
+        <section class="container mx-auto py-8">
+            <h2 class="text-white text-5xl font-bold mb-8 text-center">Servicios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
+                    <img src="./src/img/adiestramiento.avif" alt="Adiestramiento"
+                        class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-blue-900 text-xl font-bold mb-2 text-center">Adiestramiento</h3>
+                    <p class="text-black text-center">Clases personalizadas para educar a tu perro.</p>
+                    <br>
+                    <button
+                        class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300"
+                        onclick="openModal('modal-adiestramiento')">Ver detalles</button>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
+                    <img src="./src/img/recreacion.jpg" alt="Adiestramiento"
+                        class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-blue-900 text-xl font-bold mb-2 text-center">Recreación</h3>
+                    <p class="text-black text-center">La mejor recreación para tu canino</p>
+                    <br>
+                    <button
+                        class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300"
+                        onclick="openModal('modal-recreacion')">Ver detalles</button>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
+                    <img src="./src/img/spa.jpg" alt="Adiestramiento"
+                        class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-blue-900 text-xl font-bold mb-2 text-center">Spa Canino</h3>
+                    <p class="text-black text-center">Cuidado y mimos para consentir a tu perro.</p>
+                    <br>
+                    <button
+                        class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300"
+                        onclick="openModal('modal-spa')">Ver detalles</button>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
+                    <img src="./src/img/casas.avif" alt="Adiestramiento"
+                        class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-blue-900 text-xl font-bold mb-2 text-center">Casas Individuales</h3>
+                    <p class="text-black text-center">Espacios privados y cómodos para tu perro.</p>
+                    <br>
+                    <button
+                        class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300"
+                        onclick="openModal('modal-casas')">Ver detalles</button>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
+                    <img src="./src/img/supervision.jpeg" alt="Adiestramiento"
+                        class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-blue-900 text-xl font-bold mb-2 text-center">Supervisión 24 horas</h3>
+                    <p class="text-black text-center">Cuidado y atención constante para tu perro.</p>
+                    <br>
+                    <button
+                        class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300"
+                        onclick="openModal('modal-supervision')">Ver detalles</button>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
+                    <img src="./src/img/paseador.avif" alt="Adiestramiento"
+                        class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-blue-900 text-xl font-bold mb-2 text-center">Paseador Canino</h3>
+                    <p class="text-black text-center">Servicio óptimo para tu canino.</p>
+                    <br>
+                    <button
+                        class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300"
+                        onclick="openModal('modal-paseador')">Ver detalles</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de Adiestramiento -->
+        <div id="modal-adiestramiento"
+            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white p-6 rounded-lg max-w-md">
+                <h3 class="flex justify-center text-blue-600 text-2xl font-bold mb-2">Adiestramiento</h3>
+                <br>
+                <p>Nuestro servicio de adiestramiento canino está diseñado para brindarle a tu perro las habilidades y
+                    conocimientos necesarios para una convivencia armoniosa y feliz. Nuestros entrenadores altamente
+                    capacitados utilizan técnicas basadas en refuerzo positivo y manejo efectivo para ayudar a tu perro
+                    a desarrollar obediencia, socialización y buen comportamiento.</p>
+                <!-- Botón de Cerrar -->
+                <div class="flex justify-center mt-6">
+                    <button onclick="closeModal('modal-adiestramiento')"
+                        class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 transition-colors duration-300">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Recreacion -->
+        <div id="modal-recreacion" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white p-6 rounded-lg max-w-md">
+                <h3 class="flex justify-center text-blue-600 text-2xl font-bold mb-2">Recreación</h3>
+                <br>
+                <p>En nuestra recreación canina, brindamos a tu perro un espacio seguro y divertido para que pueda correr, jugar y socializar con otros perros. Nuestro equipo de cuidadores altamente capacitados estará allí para supervisar y organizar actividades emocionantes que mantendrán a tu perro activo y feliz.</p>
+                <!-- Botón de Cerrar -->
+                <div class="flex justify-center mt-6">
+                    <button onclick="closeModal('modal-recreacion')"
+                        class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 transition-colors duration-300">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Spa -->
+        <div id="modal-spa" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white p-6 rounded-lg max-w-md">
+                <h3 class="flex justify-center text-blue-600 text-2xl font-bold mb-2">Spa canino</h3>
+                <br>
+                <p>
+                    Nuestro servicio de Spa Canino está diseñado para brindarle a tu perro una experiencia relajante y rejuvenecedora. Nuestros expertos en cuidado canino se encargarán de consentir a tu mascota con baños especiales, masajes relajantes, tratamientos de belleza y mucho más. Tu perro se sentirá mimado y revitalizado, luciendo radiante y saludable. ¡Déjanos cuidar de su bienestar y hacerlo sentir como una verdadera estrella en nuestro Spa Canino!</p>
+                <!-- Botón de Cerrar -->
+                <div class="flex justify-center mt-6">
+                    <button onclick="closeModal('modal-spa')"
+                        class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 transition-colors duration-300">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Casas -->
+        <div id="modal-casas" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white p-6 rounded-lg max-w-md">
+                <h3 class="flex justify-center text-blue-600 text-2xl font-bold mb-2">Casas individuales</h3>
+                <br>
+                <p>
+                    Nuestro servicio de Casas Individuales para caninos ofrece espacios privados y cómodos para que tu perro se sienta como en casa. Cada casa está diseñada pensando en su comodidad y seguridad, proporcionándole un lugar tranquilo y acogedor donde pueda descansar y tener su propio espacio. Nuestro objetivo es brindarle a tu mascota un ambiente seguro y confortable, con todas las comodidades necesarias para que se sienta feliz y protegido. En nuestras casas individuales, tu perro recibirá el cuidado y la atención personalizada que se merece.</p>
+                <!-- Botón de Cerrar -->
+                <div class="flex justify-center mt-6">
+                    <button onclick="closeModal('modal-casas')"
+                        class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 transition-colors duration-300">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Supervision -->
+        <div id="modal-supervision" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white p-6 rounded-lg max-w-md">
+                <h3 class="flex justify-center text-blue-600 text-2xl font-bold mb-2">Supervisión24 horas</h3>
+                <br>
+                <p>
+                    Nuestro servicio de Supervisión 24 horas para caninos brinda cuidado y atención constante a tu perro. Entendemos lo importante que es para ti tener la tranquilidad de que tu mascota está siendo vigilada y cuidada en todo momento. Con nuestro equipo de profesionales altamente capacitados, tu perro estará bajo supervisión las 24 horas del día, los 7 días de la semana. Nos aseguramos de que reciba el amor, la atención y los cuidados necesarios para su bienestar. Ya sea que necesite compañía durante la noche o atención especializada en caso de emergencia, estamos aquí para brindarle a tu perro el cuidado continuo que se merece. Tu mejor amigo estará en buenas manos con nuestra supervisión constante.</p>
+                <!-- Botón de Cerrar -->
+                <div class="flex justify-center mt-6">
+                    <button onclick="closeModal('modal-supervision')"
+                        class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 transition-colors duration-300">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Paseador -->
+        <div id="modal-paseador" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white p-6 rounded-lg max-w-md">
+                <h3 class="flex justify-center text-blue-600 text-2xl font-bold mb-2">Paseador canino</h3>
+                <br>
+                <p>
+                    Nuestro servicio de Paseador Canino está diseñado para ofrecerle a tu perro la oportunidad de disfrutar de paseos divertidos y estimulantes. Sabemos lo importante que es para tu mascota recibir ejercicio regular y explorar su entorno, por lo que nuestros paseadores caninos expertos se encargarán de brindarle caminatas emocionantes y enriquecedoras. Nuestros paseadores caninos están capacitados para adaptarse a las necesidades individuales de cada perro, ya sea que prefiera caminatas tranquilas y relajantes o aventuras llenas de energía. Además, nos aseguramos de seguir las mejores prácticas en términos de seguridad, utilizando correas resistentes y asegurándonos de que tu perro esté bajo control en todo momento.</p>
+                <!-- Botón de Cerrar -->
+                <div class="flex justify-center mt-6">
+                    <button onclick="closeModal('modal-paseador')"
+                        class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 transition-colors duration-300">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+
+        <section id="contact" class="bg-gray-200 py-8">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center">Contacto</h2>
+                <form class="max-w-md mx-auto" onsubmit="redirectToWhatsApp(event)">
+                    <input type="text" name="name" placeholder="Nombre" required
+                        class="w-full px-4 py-2 mb-4 rounded border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                    <textarea name="message" placeholder="Mensaje" required
+                        class="w-full px-4 py-2 mb-4 rounded border-gray-300 focus:border-blue-500 focus:ring-blue-500"></textarea>
+                    <button type="submit"
+                        class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+        <script>
+            function openModal(modalId) {
+                const modal = document.getElementById(modalId);
+                modal.classList.remove('hidden');
+            }
+
+            function closeModal(modalId) {
+                const modal = document.getElementById(modalId);
+                modal.classList.add('hidden');
+            }
+
+            function redirectToWhatsApp(event) {
+                event.preventDefault();
+                var phoneNumber = "+57 3223672151";
+                var name = document.getElementsByName("name")[0].value;
+                var message = document.getElementsByName("message")[0].value;
+                var finalMessage = "Hola, soy " + name + ". " + message;
+                var url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(finalMessage);
+                window.open(url);
+            }
+        </script>
+
+        <footer class="bg-gray-200 py-4">
+            <div class="container mx-auto text-center">
+                <p>&copy; 2023 Happy Dogs. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
